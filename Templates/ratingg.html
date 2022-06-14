@@ -1,0 +1,27 @@
+{% load custom_tagger %}
+
+
+   {% if "/" in data.name %}
+        <div role="{{ratinger.rating}}" id="{{data.slug}}" class="my-rating"></div>
+    {% else %}
+        <div role="{{ratinger.rating}}" id="{{data.name}}" class="my-rating"></div>
+   {% endif %}
+    
+ {% if user.is_authenticated %}
+ <div style="position:absolute">
+        <i class="fas fa-star user_star" style="color: gray;"></i>
+        <span class="his_rating " style=" top: -13%;">rate this</span>
+        <div style="margin-top : 5%" >
+            You
+        </div>
+    </div>
+ {% else %}
+ <div style="display: grid;">
+        <i class="fas fa-star user_star" style="color: gray;"></i>
+        <span class="his_rating " style=" top: -13%;">rate this</span>
+        
+    </div>
+ {% endif %}
+    
+  
+

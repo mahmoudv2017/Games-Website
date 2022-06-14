@@ -1,0 +1,46 @@
+.column_2 a{
+    color: black;
+    text-decoration: none;
+}
+.column_2 a:hover{
+    color: black;
+    text-decoration: none;
+}
+
+.main .fa-star{
+    color: gold;
+    font-size: 28px;
+}
+
+.ratings_count{
+    
+    text-align: center;
+    font-size: 19px;
+}
+
+.api_rating{
+    position: relative;
+    display: inline;
+    font-size: 29px;
+    font-weight: 700;
+    color: gold;
+}
+
+
+.swiper{
+
+    
+  
+    left: 400% !important;
+    
+}
+
+@media (max-width: 1500px){
+    .rower{
+        margin-left: 0% !important;
+    }
+
+    .front_data{
+        grid-template-columns: 38.5% 20% !important;
+    }
+}

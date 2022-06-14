@@ -1,0 +1,185 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block body_block %}
+<div>
+
+
+
+
+
+
+
+
+<div class="indexer">
+    <div class="indecer2">
+        <div class="swiper-container lander">
+            <div class="swiper-wrapper" >
+    
+                {% for x in data %}
+                    {% if x.background_image != null %}
+                    {% if "/" in x.name %}
+                        <div class="swiper-slide" onclick="clicked('{{x.slug}}')" on style="background-image:url({{x.background_image}})"></div>
+                    {% else %}
+                        <div class="swiper-slide" onclick="clicked('{{x.name}}')" on style="background-image:url({{x.background_image}})"></div>
+                    {% endif %}
+                        
+                        
+                    {% endif %}
+                    
+                {% endfor %}
+    
+            </div>
+    
+        </div>
+    
+    </div>
+</div>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <br>
+        <hr>
+        <br>
+        <h1 class="headd">MOST ANTCIPATED</h1>
+        <div>
+        </div>
+        <div class="owl-carousel game_pc owl-theme" style="width: 96%;">
+    
+            {%for x in most_anti_data%}
+               
+                <div class="item" style>
+                    {% if "/" in x.name %}
+                        <a href="game={{x.slug}}">
+                    {% else %}
+                        <a href="game={{x.name}}">
+                    {% endif %}
+                    
+                    <img style="height: 190px;" src="{{x.background_image}}" alt="">
+                    </a>
+                    
+                </div>
+               
+            {%endfor%}
+            
+            
+        </div>
+       
+
+
+        <br>
+        <hr>
+        <br>
+        <h1 class="headd">Highest Rated GAMES</h1>
+        <div class="owl-carousel game_pc owl-theme" style="width: 96%;">
+    
+            {%for x in hight_rating%}
+            {% for y in x.platforms %}
+       
+                {% if  y.platform.name == "PC" %}
+                 <div class="item">
+                    {% if "/" in x.name %}
+                        <a href="game={{x.slug}}">
+                    {% else %}
+                        <a href="game={{x.name}}">
+                    {% endif %}
+                    <img style="height: 190px;" src="{{x.background_image}}" alt="">
+                    </a>
+                        
+                </div>
+                {% endif %}
+            {% endfor %}
+                
+                   
+           
+            {%endfor%}
+            
+        </div>
+
+
+        
+
+
+        
+
+        <br>
+        <hr>
+        <br>
+        <h1 class="headd">Most Popular GAMES</h1>
+        <div class="owl-carousel game_pc owl-theme" style="width: 96%;">
+    
+            {%for x in most_popular%}
+            {% for y in x.platforms %}
+       
+                {% if  y.platform.name == "PC" %}
+                 <div class="item" style>
+                    {% if "/" in x.name %}
+                        <a href="game={{x.slug}}">
+                    {% else %}
+                        <a href="game={{x.name}}">
+                    {% endif %}
+                    <img style="height: 190px;" src="{{x.background_image}}" alt="">
+                    </a>
+                </div>  
+                {% endif %}
+            {% endfor %}
+                
+                   
+           
+            {%endfor%}
+            
+        </div>
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+{% endblock body_block %}
+
+
+{% block script %}
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{% static 'my_jquery.js' %}"></script>
+{% endblock script %}
