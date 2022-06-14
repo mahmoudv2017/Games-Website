@@ -1,9 +1,9 @@
-### Games Blogger
+## Games Blogger
 
 For Making a list for games like imdp for movies
 
 
-## TO RUN
+### TO RUN
 
 ## 1 - pip install graphene
 
